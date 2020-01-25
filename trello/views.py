@@ -4,5 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def index(response):
-    return HttpResponse("仮のトップページです")
+def index(request):
+    return HttpResponse("仮のトップページ")

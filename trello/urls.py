@@ -3,6 +3,6 @@ from . import views
 
 app_name = 'trello'
 
-url_pattterns = [
+urlpatterns = [
     path("", views.index, name="index"),
 ]

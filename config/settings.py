@@ -122,4 +122,9 @@ STATIC_URL = '/static/'
 
 # ログイン後のリダイレクト先
 LOGIN_REDIRECT_URL = "trello:home"
+
+# ログアウト後のリダイレクト先
 LOGOUT_REDIRECT_URL = "trello:index"
+
+# ログインページ
+LOGIN = "login"

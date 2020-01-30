@@ -1,5 +1,6 @@
 from django.contrib.auth import login  # 追加
 from django.contrib.auth.forms import UserCreationForm  # 追加
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect  # redirectをインポート
 
 
@@ -11,6 +12,7 @@ def index(request):
     return render(request, "trello/index.html")
 
 
+@login_required
 def home(request):
     return render(request, "trello/home.html")
 

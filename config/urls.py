@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path  # includeを追加
+from django.urls import include, path
 
 urlpatterns = [
-    path("trello/", include("trello.urls")),  # この行を追加
+    path("trello/", include("trello.urls")),
+    path("trello/", include("django.contrib.auth.urls")),
     path('admin/', admin.site.urls),
 ]
+
+# Django側で定義されていたもの
+# trello/login/
+# trello/logout/

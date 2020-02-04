@@ -1,8 +1,9 @@
 from django.contrib.auth import login  # 追加
 from django.contrib.auth.forms import UserCreationForm  # 追加
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect  # redirectをインポート
-
+from django.views.generic import DetailView
 
 # # Create your views here.
 from django.http import HttpResponse
@@ -27,10 +28,15 @@ def signup(request):
             return redirect("trello:home")
 
     else:
-        print('elseだよ')
+        print('elseなのでGETだよ')
         print(request)
         context = {
             "form": UserCreationForm()
         }
         print(context)
         return render(request, 'trello/signup.html', context)
+
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = "trello/users/detail.html"
